@@ -41,7 +41,7 @@ router.post('/usage', async (req, res) => {
       window_size,
       group_by,
     });
-    console.log('Metronome /usage response:', JSON.stringify(response.data, null, 2));
+    // console.log('Metronome /usage response:', JSON.stringify(response.data, null, 2));
     res.json({ usage: response.data.data });
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch usage' });
