@@ -5,9 +5,11 @@ const cors = require('cors');
 
 const app = express();
 const PORT = 5000;
+const usageRouter = require('./usage');
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/usage', usageRouter);
 
 const METRONOME_API_BASE = 'https://api.metronome.com/v1';
 const METRONOME_API_BEARER_TOKEN = process.env.METRONOME_API_BEARER_TOKEN;
